@@ -1,0 +1,9 @@
+{
+  "name": "w14-user-api",
+  "version": "1.0.0",
+  "description": "Node.js JSON file API with dynamic frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

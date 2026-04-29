@@ -1,0 +1,68 @@
+:host {
+  font-family: Arial, sans-serif;
+  display: block;
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.todo-container {
+  max-width: 560px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.add-task {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+input[type="text"] {
+  flex: 1;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+button.delete {
+  background: #dc2626;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+li {
+  display: flex;
+  gap: 8px;
+}
+
+.empty {
+  margin: 16px 0 0;
+  text-align: center;
+  color: #5b6472;
+}

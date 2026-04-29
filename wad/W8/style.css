@@ -1,0 +1,16 @@
+﻿body {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.card {
+  border-radius: 16px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+}
+
+.btn-primary {
+  border-radius: 10px;
+}

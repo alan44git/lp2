@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <span class="brand">⬡ AuthApp</span>
+    <div class="nav-links">
+        @if (!auth.isLoggedIn()) {
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">Register</a>
+        } @else {
+        <a routerLink="/profile">Profile</a>
+        <button (click)="logout()">Logout</button>
+        }
+    </div>
+</nav>
+
+<main>
+    <router-outlet />
+</main>

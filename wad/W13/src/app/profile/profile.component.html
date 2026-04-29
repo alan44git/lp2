@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="avatar">{{ user?.name?.charAt(0)?.toUpperCase() }}</div>
+    <h2>{{ user?.name }}</h2>
+    <div class="info-row">
+        <span class="label">Email</span>
+        <span class="value">{{ user?.email }}</span>
+    </div>
+    <div class="info-row">
+        <span class="label">Member Since</span>
+        <span class="value">{{ today }}</span>
+    </div>
+    <div class="badge">Active</div>
+</div>

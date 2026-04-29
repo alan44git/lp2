@@ -1,0 +1,9 @@
+{
+  "name": "w16-static-site",
+  "version": "1.0.0",
+  "description": "Node.js static website for an art gallery",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

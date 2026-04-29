@@ -1,0 +1,9 @@
+{
+  "name": "w17-employee-directory",
+  "version": "1.0.0",
+  "description": "Node.js Employee Directory with JSON API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
