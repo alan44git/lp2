@@ -1,0 +1,135 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0b1220, #111827);
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+.navbar {
+  width: 90%;
+  max-width: 950px;
+  margin: 18px auto 0;
+  padding: 14px 18px;
+  background: rgba(31, 41, 55, 0.9);
+  border: 1px solid #374151;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  color: #93c5fd;
+  font-size: 1.1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+}
+
+.navbar a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navbar a:hover {
+  color: #60a5fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 950px;
+  margin: 18px auto 32px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hero {
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+}
+
+.tag {
+  color: #bfdbfe;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin: 4px 0 2px;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #dbeafe;
+  margin-bottom: 8px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #f8fafc;
+  color: #1e3a8a;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+h3 {
+  color: #60a5fa;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 6px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chips span {
+  background: #0f172a;
+  border: 1px solid #334155;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.project {
+  margin-bottom: 12px;
+}
+
+.project h4 {
+  color: #e2e8f0;
+  margin-bottom: 3px;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,14 @@
+﻿body {
+  background: #f7f8fa;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #212529;
+  color: #fff;
+}

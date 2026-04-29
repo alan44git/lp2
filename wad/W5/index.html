@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShopGrid - Product Listing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container py-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+      <div>
+        <h1 class="h3 mb-1">Mugs Store</h1>
+        <p class="text-secondary small mb-0">Find stylish mugs for home, office, and gifting.</p>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Filter Category
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item filter-btn active" data-filter="all">All</button></li>
+          <li><button class="dropdown-item filter-btn" data-filter="ceramic">Ceramic</button></li>
+          <li><button class="dropdown-item filter-btn" data-filter="travel">Travel</button></li>
+          <li><button class="dropdown-item filter-btn" data-filter="glass">Glass</button></li>
+          <li><button class="dropdown-item filter-btn" data-filter="premium">Premium</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <aside class="col-12 col-lg-3">
+        <div class="p-3 border rounded-3 bg-white shadow-sm">
+          <h2 class="h6 mb-3">Quick Filters</h2>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="inStock" checked />
+            <label class="form-check-label" for="inStock">In Stock</label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="bestSeller" />
+            <label class="form-check-label" for="bestSeller">Bestseller</label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="newArrival" />
+            <label class="form-check-label" for="newArrival">New Arrival</label>
+          </div>
+          <hr />
+          <p class="small text-secondary mb-0">Use category dropdown for actual product filtering.</p>
+        </div>
+      </aside>
+
+      <section class="col-12 col-lg-9">
+        <div class="row g-3" id="productGrid">
+          <div class="col-12 col-sm-6 col-xl-4 product-item" data-category="ceramic" data-stock="in" data-bestseller="yes" data-new="no">
+            <div class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="White Ceramic Mug" />
+              <div class="card-body">
+                <span class="badge text-bg-warning mb-2">Bestseller</span>
+                <h3 class="h6 card-title mb-1">White Ceramic Mug</h3>
+                <p class="small text-secondary mb-2">Classic 11oz ceramic mug for daily use.</p>
+                <p class="fw-semibold mb-0">₹299</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-4 product-item" data-category="travel" data-stock="in" data-bestseller="no" data-new="yes">
+            <div class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Travel Coffee Mug" />
+              <div class="card-body">
+                <span class="badge text-bg-info mb-2">New</span>
+                <h3 class="h6 card-title mb-1">Travel Coffee Mug</h3>
+                <p class="small text-secondary mb-2">Spill-resistant mug with insulated lid.</p>
+                <p class="fw-semibold mb-0">₹499</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-4 product-item" data-category="glass" data-stock="out" data-bestseller="no" data-new="no">
+            <div class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Clear Glass Mug" />
+              <div class="card-body">
+                <h3 class="h6 card-title mb-1">Clear Glass Mug</h3>
+                <p class="small text-secondary mb-2">Elegant heat-resistant glass mug.</p>
+                <p class="fw-semibold mb-0">₹349</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-4 product-item" data-category="premium" data-stock="in" data-bestseller="no" data-new="no">
+            <div class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Premium Matte Mug" />
+              <div class="card-body">
+                <h3 class="h6 card-title mb-1">Premium Matte Mug</h3>
+                <p class="small text-secondary mb-2">Modern matte finish with sturdy handle.</p>
+                <p class="fw-semibold mb-0">₹599</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-4 product-item" data-category="ceramic" data-stock="in" data-bestseller="no" data-new="yes">
+            <div class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1618863096881-6957a6ecae8d?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Printed Ceramic Mug" />
+              <div class="card-body">
+                <h3 class="h6 card-title mb-1">Printed Ceramic Mug</h3>
+                <p class="small text-secondary mb-2">Custom print mug for gifts and branding.</p>
+                <p class="fw-semibold mb-0">₹379</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-4 product-item" data-category="travel" data-stock="in" data-bestseller="yes" data-new="no">
+            <div class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Steel Travel Tumbler" />
+              <div class="card-body">
+                <span class="badge text-bg-warning mb-2">Bestseller</span>
+                <h3 class="h6 card-title mb-1">Steel Travel Tumbler</h3>
+                <p class="small text-secondary mb-2">Keeps drinks hot/cold for long hours.</p>
+                <p class="fw-semibold mb-0">₹699</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.product-item');
+    const inStock = document.getElementById('inStock');
+    const bestSeller = document.getElementById('bestSeller');
+    const newArrival = document.getElementById('newArrival');
+    let activeCategory = 'all';
+
+    function applyFilters() {
+      items.forEach((item) => {
+        const categoryMatch = activeCategory === 'all' || item.dataset.category === activeCategory;
+        const stockMatch = !inStock.checked || item.dataset.stock === 'in';
+        const bestsellerMatch = !bestSeller.checked || item.dataset.bestseller === 'yes';
+        const newMatch = !newArrival.checked || item.dataset.new === 'yes';
+        const show = categoryMatch && stockMatch && bestsellerMatch && newMatch;
+        item.classList.toggle('d-none', !show);
+      });
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    [inStock, bestSeller, newArrival].forEach((checkbox) => {
+      checkbox.addEventListener('change', applyFilters);
+    });
+
+    applyFilters();
+  </script>
+</body>
+</html>
