@@ -1,3 +1,4 @@
+## HTML
 1. Develop a responsive product catalog webpage using HTML, CSS, and JavaScript. The webpage should display products in a table format with images and implement pagination if there are more than 10 products.
 ![alt text](image.png)
 2. Create a personal portfolio webpage using HTML and CSS. The webpage should showcase personal details, skills, projects, educational details, and contact information.
@@ -20,6 +21,7 @@ Advanced)
 Course categories (e.g., - AI & ML, - Data Science, - Web 
 Development) 
 Course table with Course Name, Instructor, Duration, Fee (INR ₹)
+## Bootstrap
 5. Create an e-commerce product listing page using Bootstrap. The page should feature a grid layout with Bootstrap cards for product display and implement category filters using Bootstrap's dropdown. The page should be fully responsive for different screen sizes.
 ![alt text](image-1.png)
 6. Create a responsive web page for College website with top navbar and display toppers data statistics (year wise) in card using Bootstrap 
@@ -47,16 +49,19 @@ and social media links.
 7. Create the following web page of Facebook using Bootstrap
 ![alt text](image-2.png)
 8. Create an event registration form using Bootstrap’s form components. Include input validation, floating labels, and tooltips to guide the user.
+## AJAX
 9. Create a weather application using JavaScript and AJAX where users enter a city name, and AJAX fetches real-time weather data dynamically from local repository map having city with temperature, humidity, and conditions
 10. Develop a to-do list that automatically saves tasks (add, update, delete) to the server using AJAX without requiring a page refresh.
 11. Write a JavaScript Program to create a login(username, password) and registration form(name, email, mobile number, dob, city, address) and push to an array/local storage with the AJAX POST method and a data list in a new page
+## Angular
 12. Create a basic to-do list where users can add, edit, and delete tasks. Use Angular’s two-way data binding to update tasks dynamically.
 13. Create an Angular application which will do following actions: User Registration, Login User, Show User Data on Profile Component 
+## Static website using Node
 14. Create a Node.js server that reads user data from a JSON file and serves it as an API. A front-end page should display the list dynamically using HTML & JavaScript.
 15. Build a product catalog where product details (name, price, image) are stored in a JSON file. The Node.js server should provide the data as an API for a front-end page to display products
 16. Create a Node.JS Application that serves as a static website for Restaurants/Art Gallery 
-17. Build an Employee Directory where employee details (name, designation, department, salary, and profile image) are stored in a JSON file. A Node.js server should provide this data as an API, and a front-end page should fetch and display 
-employee details.
+17. Build an Employee Directory where employee details (name, designation, department, salary, and profile image) are stored in a JSON file. A Node.js server should provide this data as an API, and a front-end page should fetch and display employee details.
+## Node, Express, Mongo
 18. Perform the following tasks using node.js, Express.js and MongoDB. The 
 following operation should be performed only on Nodejs and Express.js. 
 a)  Create a Database called music. 
@@ -106,6 +111,7 @@ date)
 • Retrieve a list of all books 
 • Update book details 
 • Delete a book from the collection
+## JQuery
 22. Create a simple mobile website using jQuery Mobile for your college – Pune Institute of Computer Technology (PICT). Include static pages like: 
 • About Us 
 • Courses Offered 
