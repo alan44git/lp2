@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Reviews</title>
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+  <div data-role="page" id="home">
+    <div data-role="header" data-theme="b">
+      <h1>Movie Reviews</h1>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" class="ui-btn-active" data-transition="fade">Home</a></li>
+          <li><a href="#movie1" data-transition="slide">Inception</a></li>
+          <li><a href="#movie2" data-transition="slide">Interstellar</a></li>
+          <li><a href="#movie3" data-transition="slide">Dangal</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="content">
+      <h2>Static Movie Reviews</h2>
+      <p>Select a movie to view its genre, summary, and review.</p>
+
+      <ul data-role="listview" data-inset="true">
+        <li><a href="#movie1" data-transition="slide">Inception</a></li>
+        <li><a href="#movie2" data-transition="slide">Interstellar</a></li>
+        <li><a href="#movie3" data-transition="slide">Dangal</a></li>
+        <li><a href="#movie4" data-transition="slide">3 Idiots</a></li>
+        <li><a href="#movie5" data-transition="slide">The Dark Knight</a></li>
+      </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <h4>Mobile Movie Review Site</h4>
+    </div>
+  </div>
+
+  <div data-role="page" id="movie1">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Inception</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="poster poster-one">Inception</div>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Genre</h3>
+        <p>Science Fiction, Thriller</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Short Summary</h3>
+        <p>A skilled thief enters dreams to steal secrets and is offered a chance to erase his criminal past.</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Review</h3>
+        <p>Inception is a smart and engaging film with strong visuals, complex ideas, and a gripping storyline.</p>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#movie2" data-transition="slide">Next</a></li>
+          <li><a href="#movie5" data-transition="slide" data-direction="reverse">Last</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="movie2">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Interstellar</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="poster poster-two">Interstellar</div>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Genre</h3>
+        <p>Science Fiction, Drama</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Short Summary</h3>
+        <p>A group of explorers travel through space to find a new home for humanity.</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Review</h3>
+        <p>Interstellar combines emotional storytelling with scientific imagination and memorable music.</p>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#movie1" data-transition="slide" data-direction="reverse">Previous</a></li>
+          <li><a href="#movie3" data-transition="slide">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="movie3">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Dangal</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="poster poster-three">Dangal</div>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Genre</h3>
+        <p>Sports, Drama</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Short Summary</h3>
+        <p>A former wrestler trains his daughters to become professional wrestlers and compete for India.</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Review</h3>
+        <p>Dangal is inspiring, emotional, and strongly performed, with a clear message about dedication.</p>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#movie2" data-transition="slide" data-direction="reverse">Previous</a></li>
+          <li><a href="#movie4" data-transition="slide">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="movie4">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>3 Idiots</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="poster poster-four">3 Idiots</div>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Genre</h3>
+        <p>Comedy, Drama</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Short Summary</h3>
+        <p>Three engineering students question the education system while learning about friendship and ambition.</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Review</h3>
+        <p>3 Idiots is entertaining and meaningful, with humor, emotion, and a practical message for students.</p>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#movie3" data-transition="slide" data-direction="reverse">Previous</a></li>
+          <li><a href="#movie5" data-transition="slide">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="movie5">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>The Dark Knight</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="poster poster-five">The Dark Knight</div>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Genre</h3>
+        <p>Action, Crime, Drama</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Short Summary</h3>
+        <p>Batman faces the Joker, a criminal mastermind who creates chaos in Gotham City.</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Review</h3>
+        <p>The Dark Knight is intense and well-written, with strong performances and memorable action scenes.</p>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#movie4" data-transition="slide" data-direction="reverse">Previous</a></li>
+          <li><a href="#movie1" data-transition="slide">First</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

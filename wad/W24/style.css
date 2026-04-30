@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.ui-content {
+  padding: 18px;
+}
+
+h2 {
+  color: #1d3557;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.poster {
+  width: 180px;
+  height: 250px;
+  margin: 0 auto 18px;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.poster-one {
+  background: #243b55;
+}
+
+.poster-two {
+  background: #3a506b;
+}
+
+.poster-three {
+  background: #9b2226;
+}
+
+.poster-four {
+  background: #2a9d8f;
+}
+
+.poster-five {
+  background: #111;
+}

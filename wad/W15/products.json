@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Wireless Headphones",
+    "price": 7999,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=120&h=90&fit=crop"
+  },
+  {
+    "name": "Smartwatch",
+    "price": 12999,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=120&h=90&fit=crop"
+  },
+  {
+    "name": "Gaming Mouse",
+    "price": 2499,
+    "image": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=120&h=90&fit=crop"
+  },
+  {
+    "name": "Laptop Stand",
+    "price": 1999,
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=120&h=90&fit=crop"
+  },
+  {
+    "name": "Keyboard",
+    "price": 5499,
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=120&h=90&fit=crop"
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "price": 3299,
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=120&h=90&fit=crop"
+  }
+]

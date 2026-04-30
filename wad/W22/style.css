@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.ui-content {
+  padding: 18px;
+}
+
+h2 {
+  color: #1d3557;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.ui-footer h4 {
+  font-size: 14px;
+}

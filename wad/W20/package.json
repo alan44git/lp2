@@ -1,0 +1,13 @@
+{
+  "name": "w20-employee-management",
+  "version": "1.0.0",
+  "description": "Employee record management using Node.js, Express.js and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.17.0"
+  }
+}

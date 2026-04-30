@@ -1,0 +1,12 @@
+{
+  "name": "w15-product-catalog-api",
+  "version": "1.0.0",
+  "description": "Product catalog using JSON file and Node.js API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

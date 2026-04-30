@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PICT Mobile Website</title>
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+  <div data-role="page" id="home">
+    <div data-role="header" data-theme="b">
+      <h1>PICT</h1>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" class="ui-btn-active" data-transition="fade">Home</a></li>
+          <li><a href="#about" data-transition="slide">About</a></li>
+          <li><a href="#courses" data-transition="slide">Courses</a></li>
+          <li><a href="#contact" data-transition="pop">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="content">
+      <h2>Pune Institute of Computer Technology</h2>
+      <p>
+        PICT is an engineering college in Pune known for technical education,
+        student activities, and strong placement culture.
+      </p>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Quick Information</h3>
+        <p>Location: Dhankawadi, Pune</p>
+        <p>Institute Type: Engineering College</p>
+        <p>Focus Areas: Computer, IT, Electronics and Communication</p>
+      </div>
+
+      <a href="#about" class="ui-btn ui-btn-b" data-transition="slide">Explore College</a>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <h4>PICT College Website</h4>
+    </div>
+  </div>
+
+  <div data-role="page" id="about">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>About Us</h1>
+    </div>
+
+    <div data-role="content">
+      <h2>About PICT</h2>
+      <p>
+        Pune Institute of Computer Technology provides undergraduate and
+        postgraduate education in engineering and technology.
+      </p>
+
+      <div data-role="collapsible-set">
+        <div data-role="collapsible">
+          <h3>Vision</h3>
+          <p>To provide quality technical education and develop skilled engineers.</p>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Student Life</h3>
+          <p>Students participate in technical events, clubs, coding activities, and cultural programs.</p>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Facilities</h3>
+          <p>The college has classrooms, laboratories, library facilities, and placement support.</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#courses" data-transition="slide">Courses</a></li>
+          <li><a href="#departments" data-transition="slide">Departments</a></li>
+          <li><a href="#contact" data-transition="pop">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="courses">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Courses</h1>
+    </div>
+
+    <div data-role="content">
+      <h2>Courses Offered</h2>
+
+      <ul data-role="listview" data-inset="true">
+        <li>B.E. Computer Engineering</li>
+        <li>B.E. Information Technology</li>
+        <li>B.E. Electronics and Telecommunication</li>
+        <li>M.E. Computer Engineering</li>
+        <li>Ph.D. Programs</li>
+      </ul>
+
+      <div data-role="collapsible">
+        <h3>Admission Note</h3>
+        <p>Admissions are based on applicable entrance examination and institute admission rules.</p>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#about" data-transition="slide" data-direction="reverse">About</a></li>
+          <li><a href="#departments" data-transition="slide">Departments</a></li>
+          <li><a href="#contact" data-transition="pop">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="departments">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Departments</h1>
+    </div>
+
+    <div data-role="content">
+      <h2>Departments</h2>
+
+      <div data-role="collapsible-set">
+        <div data-role="collapsible" data-collapsed="false">
+          <h3>Computer Engineering</h3>
+          <p>Focuses on programming, data structures, databases, web technology, and software development.</p>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Information Technology</h3>
+          <p>Covers networking, web systems, software engineering, and modern IT applications.</p>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Electronics and Telecommunication</h3>
+          <p>Deals with electronics, communication systems, embedded systems, and signal processing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#about" data-transition="slide" data-direction="reverse">About</a></li>
+          <li><a href="#courses" data-transition="slide" data-direction="reverse">Courses</a></li>
+          <li><a href="#contact" data-transition="pop">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="contact">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Contact</h1>
+    </div>
+
+    <div data-role="content">
+      <h2>Contact Information</h2>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Address</h3>
+        <p>Pune Institute of Computer Technology, Dhankawadi, Pune, Maharashtra.</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Email</h3>
+        <p>info@pict.edu</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>Phone</h3>
+        <p>020-24371101</p>
+      </div>
+
+      <a href="#home" class="ui-btn ui-btn-b" data-transition="fade">Back to Home</a>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <h4>PICT, Pune</h4>
+    </div>
+  </div>
+
+</body>
+</html>

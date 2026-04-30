@@ -1,0 +1,13 @@
+{
+  "name": "w21-online-bookstore",
+  "version": "1.0.0",
+  "description": "Book management system using Node.js, Express.js and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.17.0"
+  }
+}

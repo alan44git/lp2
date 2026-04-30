@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PICT Student Clubs</title>
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+  <div data-role="page" id="home">
+    <div data-role="header" data-theme="b">
+      <h1>PICT Clubs</h1>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" class="ui-btn-active" data-transition="fade">Home</a></li>
+          <li><a href="#coding" data-transition="slide">Coding</a></li>
+          <li><a href="#robotics" data-transition="slide">Robotics</a></li>
+          <li><a href="#dance" data-transition="slide">Dance</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="content">
+      <h2>Student Clubs and Activities</h2>
+      <p>
+        PICT encourages students to participate in technical, cultural, and
+        extracurricular activities through various student clubs.
+      </p>
+
+      <ul data-role="listview" data-inset="true">
+        <li><a href="#coding" data-transition="slide">Coding Club</a></li>
+        <li><a href="#robotics" data-transition="slide">Robotics Club</a></li>
+        <li><a href="#dance" data-transition="slide">Dance Club</a></li>
+        <li><a href="#sports" data-transition="slide">Sports Club</a></li>
+      </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <h4>PICT Extracurricular Activities</h4>
+    </div>
+  </div>
+
+  <div data-role="page" id="coding">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Coding Club</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="club-image coding-image">Coding Club</div>
+
+      <h2>Name</h2>
+      <p>Coding Club</p>
+
+      <h2>Description</h2>
+      <p>
+        The Coding Club helps students improve programming, problem solving,
+        web development, and competitive coding skills.
+      </p>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Achievements</h3>
+        <ul>
+          <li>Students participate in hackathons and coding contests.</li>
+          <li>Regular coding practice sessions are conducted.</li>
+          <li>Projects are built using web and software technologies.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#robotics" data-transition="slide">Robotics</a></li>
+          <li><a href="#dance" data-transition="slide">Dance</a></li>
+          <li><a href="#sports" data-transition="slide">Sports</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="robotics">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Robotics Club</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="club-image robotics-image">Robotics Club</div>
+
+      <h2>Name</h2>
+      <p>Robotics Club</p>
+
+      <h2>Description</h2>
+      <p>
+        The Robotics Club gives students practical exposure to robot design,
+        sensors, automation, electronics, and embedded systems.
+      </p>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Achievements</h3>
+        <ul>
+          <li>Students build robots for college-level competitions.</li>
+          <li>Workshops are organized on Arduino and automation.</li>
+          <li>Teams create working prototypes for technical events.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#coding" data-transition="slide" data-direction="reverse">Coding</a></li>
+          <li><a href="#dance" data-transition="slide">Dance</a></li>
+          <li><a href="#sports" data-transition="slide">Sports</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="dance">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Dance Club</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="club-image dance-image">Dance Club</div>
+
+      <h2>Name</h2>
+      <p>Dance Club</p>
+
+      <h2>Description</h2>
+      <p>
+        The Dance Club provides a platform for students interested in classical,
+        western, freestyle, and group dance performances.
+      </p>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Achievements</h3>
+        <ul>
+          <li>Performs during annual cultural events.</li>
+          <li>Participates in inter-college dance competitions.</li>
+          <li>Conducts practice sessions for group performances.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#coding" data-transition="slide" data-direction="reverse">Coding</a></li>
+          <li><a href="#robotics" data-transition="slide" data-direction="reverse">Robotics</a></li>
+          <li><a href="#sports" data-transition="slide">Sports</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="sports">
+    <div data-role="header" data-theme="b">
+      <a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
+      <h1>Sports Club</h1>
+    </div>
+
+    <div data-role="content">
+      <div class="club-image sports-image">Sports Club</div>
+
+      <h2>Name</h2>
+      <p>Sports Club</p>
+
+      <h2>Description</h2>
+      <p>
+        The Sports Club promotes fitness, teamwork, and participation in indoor
+        and outdoor sports activities.
+      </p>
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Achievements</h3>
+        <ul>
+          <li>Students participate in football, cricket, chess, and badminton.</li>
+          <li>College-level sports events are organized regularly.</li>
+          <li>Teams represent PICT in inter-college tournaments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#coding" data-transition="slide" data-direction="reverse">Coding</a></li>
+          <li><a href="#robotics" data-transition="slide" data-direction="reverse">Robotics</a></li>
+          <li><a href="#dance" data-transition="slide" data-direction="reverse">Dance</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
