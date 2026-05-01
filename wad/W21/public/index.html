@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore Management</title>
+  <style>
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 18px;
+      background: white;
+      border: 1px solid #ccc;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    form {
+      margin-bottom: 18px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      background: #fafafa;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #999;
+      box-sizing: border-box;
+    }
+
+    button {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid #333;
+      background: #eee;
+      color: #111;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      background: white;
+    }
+
+    th, td {
+      border: 2px solid #111;
+      padding: 9px;
+      text-align: left;
+    }
+
+    th {
+      background: #eee;
+    }
+
+    .actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Bookstore</h1>
+
+    <form id="bookForm">
+      <h2 id="formTitle">Add Book</h2>
+      <div class="form-row">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="author" placeholder="Author" required>
+        <input type="number" id="price" placeholder="Price" required>
+        <input type="text" id="genre" placeholder="Genre" required>
+      </div>
+      <button type="submit" id="submitBtn">Add Book</button>
+      <button type="button" id="cancelBtn" class="hidden">Cancel</button>
+    </form>
+
+    <h2>Book Records</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>Genre</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="bookTableBody">
+        <tr><td colspan="5">Loading books...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const form = document.getElementById('bookForm');
+    const formTitle = document.getElementById('formTitle');
+    const submitBtn = document.getElementById('submitBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const tableBody = document.getElementById('bookTableBody');
+    const titleInput = document.getElementById('title');
+    const authorInput = document.getElementById('author');
+    const priceInput = document.getElementById('price');
+    const genreInput = document.getElementById('genre');
+
+    let editId = null;
+
+    function resetForm() {
+      editId = null;
+      form.reset();
+      formTitle.textContent = 'Add Book';
+      submitBtn.textContent = 'Add Book';
+      cancelBtn.classList.add('hidden');
+    }
+
+    function fillForm(book) {
+      editId = book._id;
+      titleInput.value = book.title;
+      authorInput.value = book.author;
+      priceInput.value = book.price;
+      genreInput.value = book.genre;
+      formTitle.textContent = 'Update Book';
+      submitBtn.textContent = 'Update Book';
+      cancelBtn.classList.remove('hidden');
+    }
+
+    async function loadBooks() {
+      const response = await fetch('/api/books');
+      const books = await response.json();
+
+      if (!books.length) {
+        tableBody.innerHTML = '<tr><td colspan="5">No book records found</td></tr>';
+        return;
+      }
+
+      tableBody.innerHTML = books.map((book) => `
+        <tr>
+          <td>${book.title}</td>
+          <td>${book.author}</td>
+          <td>${book.price}</td>
+          <td>${book.genre}</td>
+          <td>
+            <div class="actions">
+              <button type="button" data-edit="${book._id}">Edit</button>
+              <button type="button" data-delete="${book._id}">Delete</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const payload = {
+        title: titleInput.value,
+        author: authorInput.value,
+        price: Number(priceInput.value),
+        genre: genreInput.value
+      };
+
+      if (editId) {
+        await fetch(`/api/books/${editId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } else {
+        await fetch('/api/books', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      }
+
+      resetForm();
+      await loadBooks();
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      resetForm();
+    });
+
+    tableBody.addEventListener('click', async (event) => {
+      const editTarget = event.target.getAttribute('data-edit');
+      const deleteTarget = event.target.getAttribute('data-delete');
+
+      if (editTarget) {
+        const response = await fetch(`/api/books/${editTarget}`);
+        const book = await response.json();
+        fillForm(book);
+      }
+
+      if (deleteTarget) {
+        await fetch(`/api/books/${deleteTarget}`, { method: 'DELETE' });
+        if (editId === deleteTarget) {
+          resetForm();
+        }
+        await loadBooks();
+      }
+    });
+
+    loadBooks();
+  </script>
+</body>
+</html>
