@@ -1,0 +1,75 @@
+public class StudentCRUDController {
+
+    public List<Student__c> students {get; set;}
+    public Student__c studentObj {get; set;}
+    public Boolean isEdit {get; set;}
+    public Id selectedId {get; set;}
+
+    public StudentCRUDController() {
+        studentObj = new Student__c();
+        isEdit = false;
+        loadStudents();
+    }
+
+    // Load all students
+    public void loadStudents() {
+        students = [
+            SELECT Id, Name, Email__c, Phone__c, Date_of_Birth__c 
+            FROM Student__c 
+            ORDER BY CreatedDate DESC
+        ];
+    }
+
+    // Add or Update
+    public PageReference saveStudent() {
+        if(isEdit){
+            update studentObj;
+        } else {
+            insert studentObj;
+        }
+        resetForm();
+        return null;
+    }
+
+    // Edit student
+    public void editStudent() {
+        if(selectedId != null){
+            List<Student__c> result = [
+                SELECT Id, Name, Email__c, Phone__c, Date_of_Birth__c 
+                FROM Student__c 
+                WHERE Id = :selectedId 
+                LIMIT 1
+            ];
+
+            if(!result.isEmpty()){
+                studentObj = result[0];
+                isEdit = true;
+            }
+        }
+    }
+
+    // Delete student
+    public void deleteStudent() {
+        if(selectedId != null){
+            List<Student__c> result = [
+                SELECT Id FROM Student__c WHERE Id = :selectedId LIMIT 1
+            ];
+
+            if(!result.isEmpty()){
+                delete result[0];
+                loadStudents();
+            }
+        }
+    }
+
+    // Reset form
+    public void cancelEdit() {
+        resetForm();
+    }
+
+    private void resetForm(){
+        studentObj = new Student__c();
+        isEdit = false;
+        loadStudents();
+    }
+}
