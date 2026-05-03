@@ -1,0 +1,77 @@
+<apex:page controller="StudentCRUDController" sidebar="false">
+
+<div class="container">
+    <div>Student Dashboard</div>
+
+    <apex:form >
+
+        <apex:actionFunction name="doEdit"
+                             action="{!editStudent}"
+                             immediate="true"
+                             rerender="formBlock">
+            <apex:param name="studentId" value="" assignTo="{!selectedId}"/>
+        </apex:actionFunction>
+
+        <apex:actionFunction name="doDelete"
+                             action="{!deleteStudent}"
+                             immediate="true"
+                             rerender="tableBlock">
+            <apex:param name="studentId" value="" assignTo="{!selectedId}"/>
+        </apex:actionFunction>
+
+        <div class="card">
+            <apex:pageBlock id="formBlock" title="{!IF(isEdit,'Edit Student','Add Student')}">
+                <apex:pageBlockSection columns="2">
+                    <apex:outputLabel value="Full Name"/>
+                    <apex:inputField value="{!studentObj.Name}"/>
+
+                    <apex:outputLabel value="Email"/>
+                    <apex:inputField value="{!studentObj.Email__c}"/>
+
+                    <apex:outputLabel value="Phone"/>
+                    <apex:inputField value="{!studentObj.Phone__c}"/>
+
+                    <apex:outputLabel value="Date of Birth"/>
+                    <apex:inputField value="{!studentObj.Date_of_Birth__c}"/>
+                </apex:pageBlockSection>
+
+                <apex:commandButton value="{!IF(isEdit,'Update','Add')}"
+                                    action="{!saveStudent}"
+                                    rerender="formBlock,tableBlock"/>
+
+                <apex:commandButton value="Cancel"
+                                    action="{!cancelEdit}"
+                                    rendered="{!isEdit}"
+                                    rerender="formBlock"
+                                    immediate="true"/>
+            </apex:pageBlock>
+        </div>
+
+        <div class="card">
+            <apex:pageBlock id="tableBlock" title="Student List">
+                <apex:pageBlockTable value="{!students}" var="s">
+                    <apex:column value="{!s.Name}"             headerValue="Name"/>
+                    <apex:column value="{!s.Email__c}"         headerValue="Email"/>
+                    <apex:column value="{!s.Phone__c}"         headerValue="Phone"/>
+                    <apex:column value="{!s.Date_of_Birth__c}" headerValue="DOB"/>
+                    <apex:column headerValue="Actions">
+
+                        <!-- Plain buttons calling actionFunction with the Id directly -->
+                        <button type="button" class="btn btn-warning"
+                                onclick="doEdit('{!s.Id}')">
+                            Edit
+                        </button>
+
+                        <button type="button" class="btn btn-danger"
+                                onclick="if(confirm('Are you sure?')) doDelete('{!s.Id}')">
+                            Delete
+                        </button>
+
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
+
+    </apex:form>
+</div>
+</apex:page>
