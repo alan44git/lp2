@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-Do AJAX</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        button {
+            margin-left: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        const BASE_URL = "http://localhost:3000/tasks";
+        const xhr = new XMLHttpRequest();
+
+        function loadTasks() {
+            xhr.open('GET', BASE_URL, true);
+            xhr.onload = function () {
+                if (xhr.status = 200) {
+                    const data = JSON.parse(xhr.responseText)
+                    let html = "";
+
+                    data.forEach(t => {
+                        html += `
+                    <li>
+                        <span id="text-${t.id}">${t.text}</span>
+
+                        <input type="text" id="edit-${t.id}" style="display:none;" />
+
+                        <button onclick="startEdit(${t.id})">Edit</button>
+                        <button onclick="saveEdit(${t.id})" style="display:none;" id="save-${t.id}">Save</button>
+
+                        <button onclick="deleteTask(${t.id})">Delete</button>
+                    </li>`;
+                    });
+
+                    document.getElementById("taskList").innerHTML = html;
+                }
+            };
+
+            xhr.send();
+        }
+
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let text = input.value.trim();
+
+            if (!text) return;
+            xhr.open('POST', BASE_URL, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    input.value = "";
+                    loadTasks();
+                }
+            }
+
+            xhr.setRequestHeader('Content-Type','application/json');
+            xhr.send(JSON.stringify({text}))
+        }
+
+        function deleteTask(id) {
+            xhr.open('DELETE', `${BASE_URL}/${id}`, true );
+            xhr.onload = function () {
+                if(xhr.status===200){
+                    loadTasks()
+                }
+            }
+            xhr.send();
+        }
+
+        function startEdit(id) {
+            let textSpan = document.getElementById(`text-${id}`);
+            let editBox = document.getElementById(`edit-${id}`);
+            let saveBtn = document.getElementById(`save-${id}`);
+
+            editBox.value = textSpan.innerText;
+
+            textSpan.style.display = "none";
+            editBox.style.display = "inline";
+            saveBtn.style.display = "inline";
+        }
+
+        function saveEdit(id) {
+            let editBox = document.getElementById(`edit-${id}`);
+            let newText = editBox.value.trim();
+
+            if (!newText) return;
+
+            xhr.open('PUT', `${BASE_URL}/${id}`, true );
+            xhr.onload = function(){
+                if(xhr.status===200){
+                    loadTasks()       
+                }
+            }
+            xhr.setRequestHeader('Content-Type','application/json');
+            xhr.send(JSON.stringify({text:newText}));
+        }
+
+        window.onload = loadTasks;
+    </script>
+
+</body>
+
+</html>
