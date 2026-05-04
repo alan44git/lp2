@@ -1,9 +1,11 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express"
+import path from "path"
 
 const app = express();
-app.use(cors());
+const PUBLIC_DIR = path.join(import.meta.dirname, "public");
+
 app.use(express.json());
+app.use(express.static(PUBLIC_DIR))
 
 let tasks = [];
 let id = 1;
