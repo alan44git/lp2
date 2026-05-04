@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auth System</title>
+    <style>
+        body { text-align:center; font-family: Arial; }
+        input, textarea { margin:5px; padding:5px; width:200px; }
+    </style>
+</head>
+<body>
+
+<h2>Register</h2>
+
+<input type="text" id="name" placeholder="Name"><br>
+<input type="email" id="email" placeholder="Email"><br>
+<input type="text" id="mobile" placeholder="Mobile"><br>
+<input type="date" id="dob"><br>
+<input type="text" id="city" placeholder="City"><br>
+<textarea id="address" placeholder="Address"></textarea><br>
+<input type="password" id="password" placeholder="Password"><br>
+
+<button onclick="register()">Register</button>
+
+<hr>
+
+<h2>Login</h2>
+
+<input type="text" id="loginEmail" placeholder="Email"><br>
+<input type="password" id="loginPassword" placeholder="Password"><br>
+
+<button onclick="login()">Login</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
